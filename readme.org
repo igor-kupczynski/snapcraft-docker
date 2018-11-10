@@ -1,0 +1,21 @@
+#+TITLE: Readme
+
+* igor-kupczynski/snapcraft
+
+Up to date version of [[https://hub.docker.com/r/snapcore/snapcraft/][snapcore/snapcraft]] docker image.
+
+This is needed because the official one ships (as of time of writing) with
+outdated sources, so the first thing you need to do is =apt-get update=, which
+takes time.
+
+See also [[https://forum.snapcraft.io/t/building-the-snap-on-docker/6757/2][a relevant post on the snapcraft forum]].
+
+** Usage
+
+To build a snap using a container from this image:
+
+#+BEGIN_SRC sh
+  $ docker pull ikupczynski/snapcraft:stable-2018-11-09
+  $ docker run --rm -it -v "$PWD:/build" -w /build ikupczynski/snapcraft:stable-2018-11-09
+  # snapcraft
+#+END_SRC
